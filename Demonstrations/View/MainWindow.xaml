@@ -1,0 +1,32 @@
+﻿<Window x:Class="Demonstrations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demonstrations.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" >
+                    <MenuItem Header="_Close" />
+                </MenuItem>
+                <MenuItem Header="_Navigate">
+                    <MenuItem Name="miHome" Header="Home" Click="MenuItem_Click" />
+                    <MenuItem Name="miBin2Dec" Header="Bin2Dec" Click="miBin2Dec_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <TabControl Name="tcMainControl" Grid.Row="1">
+            <TabItem Header="_Welcome" />
+            <TabItem Header="_Bin2Dec" >
+                <local:Bin2Dec />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
